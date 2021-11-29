@@ -95,11 +95,11 @@ Function Send-NinjaRmmApi {
 	
 	# Pick our server.  By default, we will use the United States server.
 	# However, the European Union server can be used instead.'
-	If (($env:NinjaRmmServerLocation -eq 'US') -or ($null -eq $env:NinjaRmmServerLocation)) {
-		$HostName = 'api.ninjarmm.com'
-	}
-	ElseIf ($env:NinjaRmmServerLocation -eq 'EU') {
+	If (($env:NinjaRmmServerLocation -eq 'EU') -or ($null -eq $env:NinjaRmmServerLocation)) {
 		$HostName = 'eu-api.ninjarmm.com'
+	}
+	ElseIf ($env:NinjaRmmServerLocation -eq 'US') {
+		$HostName = 'api.ninjarmm.com'
 	}
 	Else {
 		Throw [ArgumentException]::new("The server location ${env:NinjaRmmServerLocation} is not valid.  Please run Set-NinjaRmmServerLocation.")
