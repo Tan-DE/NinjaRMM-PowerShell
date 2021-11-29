@@ -201,3 +201,17 @@ Function Get-NinjaRmmDevices {
 	}
 	Return (Send-NinjaRmmApi -RequestToSend $Request)
 }
+
+Function Get-NinjaRmmPolicies {
+	[CmdletBinding(DefaultParameterSetName='AllPolicies')]
+	Param(
+		[Parameter(ParameterSetName='OnePolicy')]
+		[UInt32] $PolicyId
+	)
+
+	$Request = '/v2/policies'
+	If ($PSCmdlet.ParameterSetName -eq 'OnePolicy') {
+		$Request += "/$PolicyId"
+	}
+	Return (Send-NinjaRmmApi -RequestToSend $Request)
+}

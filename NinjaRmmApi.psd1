@@ -32,7 +32,8 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 		'Reset-NinjaRmmAlert',
 		'Reset-NinjaRmmSecrets',
 		'Set-NinjaRmmSecrets',
-		'Set-NinjaRmmServerLocation'
+		'Set-NinjaRmmServerLocation',
+		'Get-NinjaRmmPolicies'
 	)
 	CmdletsToExport = @()
 	VariablesToExport = ''
