@@ -29,11 +29,12 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 		'Get-NinjaRmmAlerts',
 		'Get-NinjaRmmCustomers',
 		'Get-NinjaRmmDevices',
+		'Get-NinjaRmmPolicies',
+		'Get-NinjaRmmSoftware',
 		'Reset-NinjaRmmAlert',
 		'Reset-NinjaRmmSecrets',
 		'Set-NinjaRmmSecrets',
-		'Set-NinjaRmmServerLocation',
-		'Get-NinjaRmmPolicies'
+		'Set-NinjaRmmServerLocation'
 	)
 	CmdletsToExport = @()
 	VariablesToExport = ''

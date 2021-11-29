@@ -215,3 +215,19 @@ Function Get-NinjaRmmPolicies {
 	}
 	Return (Send-NinjaRmmApi -RequestToSend $Request)
 }
+
+Function Get-NinjaRmmSoftware {
+	[CmdletBinding(DefaultParameterSetName='AllSoftware')]
+	Param(
+		[Parameter(Mandatory=$true)]
+		[UInt32] $DeviceId,
+		[Parameter(ParameterSetName='OneSoftware')]
+		[UInt32] $SoftwareId
+	)
+
+	$Request = '/v2/software'
+	If ($PSCmdlet.ParameterSetName -eq 'OneSoftware') {
+		$Request += "/$SoftwareId"
+	}
+	Return (Send-NinjaRmmApi -RequestToSend $Request)
+}
