@@ -152,7 +152,7 @@ Function Get-NinjaRmmAlerts {
 		[UInt32] $Since
 	)
 
-	$Request = '/v1/alerts'
+	$Request = '/v2/alerts'
 	If ($PSCmdlet.ParameterSetName -eq 'OneAlert') {
 		$Request += "/$AlertId"
 	}
@@ -171,7 +171,7 @@ Function Reset-NinjaRmmAlert {
 		[UInt32] $AlertId
 	)
 
-	Return (Send-NinjaRmmApi -Method 'DELETE' -RequestToSend "/v1/alerts/$AlertId")
+	Return (Send-NinjaRmmApi -Method 'DELETE' -RequestToSend "/v2/alerts/$AlertId")
 }
 
 Function Get-NinjaRmmCustomers {
@@ -181,7 +181,7 @@ Function Get-NinjaRmmCustomers {
 		[UInt32] $CustomerId
 	)
 
-	$Request = '/v1/customers'
+	$Request = '/v2/customers'
 	If ($PSCmdlet.ParameterSetName -eq 'OneCustomer') {
 		$Request += "/$CustomerId"
 	}
@@ -195,7 +195,7 @@ Function Get-NinjaRmmDevices {
 		[UInt32] $DeviceId
 	)
 
-	$Request = '/v1/devices'
+	$Request = '/v2/devices'
 	If ($PSCmdlet.ParameterSetName -eq 'OneDevice') {
 		$Request += "/$DeviceId"
 	}
