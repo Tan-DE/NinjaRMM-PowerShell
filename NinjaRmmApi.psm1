@@ -225,7 +225,7 @@ Function Get-NinjaRmmSoftware {
 		[UInt32] $SoftwareId
 	)
 
-	$Request = '/v2/software'
+	$Request = "/v2/device/$DeviceId/software"
 	If ($PSCmdlet.ParameterSetName -eq 'OneSoftware') {
 		$Request += "/$SoftwareId"
 	}
