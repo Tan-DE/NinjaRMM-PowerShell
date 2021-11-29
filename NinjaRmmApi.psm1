@@ -93,8 +93,8 @@ Function Send-NinjaRmmApi {
 	# Convert the result to a Base64 string.
 	$Signature = [Convert]::ToBase64String($HashedStringBytes) -Replace "`n",""
 	
-	# Pick our server.  By default, we will use the United States server.
-	# However, the European Union server can be used instead.'
+	# Pick our server.  By default, we will use the EU server.
+	# However, the US server can be used instead.'
 	If (($env:NinjaRmmServerLocation -eq 'EU') -or ($null -eq $env:NinjaRmmServerLocation)) {
 		$HostName = 'eu-api.ninjarmm.com'
 	}
