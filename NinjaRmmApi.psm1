@@ -175,9 +175,16 @@ Function Reset-NinjaRmmAlert {
 }
 
 Function Get-NinjaRmmOrganizations {
-	[CmdletBinding()]
-	Param()
+	[CmdletBinding(DefaultParameterSetName='AllOrganizations')]
+	Param(
+		[Parameter(ParameterSetName='OneOrganization')]
+		[UInt32] $OrganizationId
+	)
+
 	$Request = '/v2/organizations'
+	If ($PSCmdlet.ParameterSetName -eq 'OneOrganization') {
+		$Request = "/v2/organization/$OrganizationId"
+	}
 	Return (Send-NinjaRmmApi -RequestToSend $Request)
 }
 
