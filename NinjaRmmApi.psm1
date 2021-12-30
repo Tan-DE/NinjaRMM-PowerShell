@@ -174,16 +174,16 @@ Function Reset-NinjaRmmAlert {
 	Return (Send-NinjaRmmApi -Method 'DELETE' -RequestToSend "/v2/alerts/$AlertId")
 }
 
-Function Get-NinjaRmmCustomers {
-	[CmdletBinding(DefaultParameterSetName='AllCustomers')]
+Function Get-NinjaRmmOrganizations {
+	[CmdletBinding(DefaultParameterSetName='AllOrganizations')]
 	Param(
-		[Parameter(ParameterSetName='OneCustomer')]
-		[UInt32] $CustomerId
+		[Parameter(ParameterSetName='OneOrganization')]
+		[UInt32] $OrganizationId
 	)
 
-	$Request = '/v2/customers'
-	If ($PSCmdlet.ParameterSetName -eq 'OneCustomer') {
-		$Request += "/$CustomerId"
+	$Request = '/v2/organizations'
+	If ($PSCmdlet.ParameterSetName -eq 'OneOrganization') {
+		$Request += "/$OrganizationId"
 	}
 	Return (Send-NinjaRmmApi -RequestToSend $Request)
 }

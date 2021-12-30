@@ -27,7 +27,7 @@ with NinjaRmmApi.  If not, see <https://www.gnu.org/licenses/>.
 	Description = 'An unofficial PowerShell module to interact with NinjaRMM.'
 	FunctionsToExport = @(
 		'Get-NinjaRmmAlerts',
-		'Get-NinjaRmmCustomers',
+		'Get-NinjaRmmOrganizations',
 		'Get-NinjaRmmDevices',
 		'Get-NinjaRmmPolicies',
 		'Get-NinjaRmmSoftware',
